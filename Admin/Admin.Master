@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="RoozbehExtension.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>پنل مدیریت</title>
+    <style>
+        .bigControls{
+            height:30px;
+            font-size:14px;
+            width:300px;
+            font-family:BYekan,Tahoma;
+        }
+        .labels {
+            width: 85px;
+        }
+
+        .largStyle {
+            font-family: byekan,Tahoma;
+            font-size: 14px;
+            height:30px;
+        }
+
+        .BigTitle {
+            border-color: whitesmoke;
+            border: solid;
+            border-width: 1px;
+            padding: 15px;
+            color: navajowhite;
+        }
+
+        .noUnderLine {
+            text-decoration: none;
+        }
+
+        @font-face {
+            font-family: 'BYekan';
+            src: url('../../BYekan.eot?#') format('eot'), url('../../BYekan.woff') format('woff'), url('../../BYekan.ttf') format('truetype');
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+
+    <script src="../Scripts/PersianDatePicker.min.js"></script>
+    <link href="../Content/PersianDatePicker.min.css" rel="stylesheet" />
+    <script>
+        $.ready(function () { $('body').fadeIn("slow"); });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body dir="rtl" style="font-family: BYekan,Tahoma; font-size: 13px;">
+    <center>
+
+        <img src="../Images/roozbehforWeb.jpg" />
+    <h2>سامانه افکار سنجی موسسه آموزش عالی روزبه</h2>
+        <table><tr style="height:50px;">
+            <td><a href="Default.aspx"><img style="height:45px;" src="../Images/home.jpg" /></a></td>
+            <td><a href="PollQuestions.aspx"><img style="height:45px;"  src="../Images/question53.png" /></a></td>
+                <td><a href="ViewPollResults.aspx"><img style="height:45px;"  src="../Images/statistics.png" /></a></td>
+           <td><a href="PollInfo.aspx"><img style="height:45px;"  src="../Images/hand130.png" /></a></td>
+            <td><a href="PollList.aspx"><img style="height:45px;"  src="../Images/poll_topic.png" /></a></td>
+            <td><a href="PollQuestionChoices.aspx"><img style="height:45px;"  src="../Images/education31.png" /></a></td>
+               </tr>
+        </table>                 
+    <form id="form1" runat="server">
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <asp:Label ID="lblLoggedInInfo" runat="server" Text=""></asp:Label>
+                </td>
+                <td>
+                    <asp:LinkButton ID="lbLogout" runat="server" OnClick="lbLogout_Click">خروج از سامانه</asp:LinkButton>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <asp:ContentPlaceHolder ID="mainContent" runat="server">  </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+      
+    </div>
+    </form>
+    </center>
+</body>
+</html>
